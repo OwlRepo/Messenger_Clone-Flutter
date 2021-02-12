@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTab.dart';
+import 'package:messenger_clone_modified/Widgets/HomeScreen/SearchTab/SearchTab.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   TabController _tabController;
   final List<Widget> tabs = [
     ChatsTab(),
-    ChatsTab(),
+    SearchTab(),
     ChatsTab(),
     ChatsTab(),
   ];
