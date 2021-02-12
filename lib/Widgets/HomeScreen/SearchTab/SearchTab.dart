@@ -6,7 +6,6 @@ class SearchTab extends StatefulWidget {
 }
 
 class _SearchTabState extends State<SearchTab> {
-  var isKBDVisible = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +21,6 @@ class _SearchTabState extends State<SearchTab> {
             Flexible(
               child: Column(
                 children: [
-                  isKBDVisible
-                      ? Container()
-                      : Image.asset('assets/png_images/searching.png'),
-                  SizedBox(
-                    height: 50.0,
-                  ),
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'Tap here to search...',
