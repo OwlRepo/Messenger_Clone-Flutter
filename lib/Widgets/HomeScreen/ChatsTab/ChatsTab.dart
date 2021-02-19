@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTabCategories.dart';
-import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTabCategoryItemList.dart';
+import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTabChatList.dart';
 import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTabHeader.dart';
 
-class ChatsTab extends StatelessWidget {
+class ChatsTab extends StatefulWidget {
+  @override
+  _ChatsTabState createState() => _ChatsTabState();
+}
+
+class _ChatsTabState extends State<ChatsTab>
+// with AutomaticKeepAliveClientMixin<ChatsTab>
+{
+  @override
+  // bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    FocusScope.of(context).unfocus();
+    // super.build(context);
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -19,7 +31,7 @@ class ChatsTab extends StatelessWidget {
               ChatsTabHeader(),
               ChatsTabCategories(),
               Expanded(
-                child: ChatsTabCategoryItemList(),
+                child: ChatsTabChatList(),
               ),
             ],
           ),

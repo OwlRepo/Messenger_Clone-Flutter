@@ -6,6 +6,7 @@ class SearchTab extends StatefulWidget {
 }
 
 class _SearchTabState extends State<SearchTab> {
+  final searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +26,7 @@ class _SearchTabState extends State<SearchTab> {
                     decoration: InputDecoration(
                       hintText: 'Tap here to search...',
                     ),
+                    controller: searchController,
                     onChanged: (value) {
                       print('Searching for $value');
                     },

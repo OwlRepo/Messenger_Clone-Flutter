@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../DummyData.dart';
 
-class ChatsTabFavourites extends StatelessWidget {
+class ChatsTabFavouritesItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -23,6 +23,7 @@ class ChatsTabFavourites extends StatelessWidget {
                       clipBehavior: Clip.antiAlias,
                       child: Image.network(
                         MESSAGES_DUMMY_DATA[index].picture,
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),

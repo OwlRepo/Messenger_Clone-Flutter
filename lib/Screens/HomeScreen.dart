@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:messenger_clone_modified/Widgets/HomeScreen/AccountTab/AccountTab.dart';
 import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTab.dart';
 import 'package:messenger_clone_modified/Widgets/HomeScreen/SearchTab/SearchTab.dart';
+import 'package:messenger_clone_modified/Widgets/HomeScreen/StoriesTab/StoriesTab.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -10,18 +12,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  var selectedIndex = 0;
   TabController _tabController;
   final List<Widget> tabs = [
     ChatsTab(),
     SearchTab(),
-    ChatsTab(),
-    ChatsTab(),
+    StoriesTab(),
+    AccountTab(),
   ];
   @override
   void initState() {
     _tabController = TabController(length: tabs.length, vsync: this);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override

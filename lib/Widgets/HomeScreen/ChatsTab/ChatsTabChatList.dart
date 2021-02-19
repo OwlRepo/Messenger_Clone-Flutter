@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_clone_modified/DummyData.dart';
-import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTabFavourites.dart';
+import 'package:messenger_clone_modified/Widgets/HomeScreen/ChatsTab/ChatsTabFavouritesItems.dart';
 
-class ChatsTabCategoryItemList extends StatefulWidget {
+class ChatsTabChatList extends StatefulWidget {
   @override
-  _ChatsTabCategoryItemListState createState() =>
-      _ChatsTabCategoryItemListState();
+  _ChatsTabChatListState createState() => _ChatsTabChatListState();
 }
 
-class _ChatsTabCategoryItemListState extends State<ChatsTabCategoryItemList> {
+class _ChatsTabChatListState extends State<ChatsTabChatList> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(20.0),
-        topRight: Radius.circular(20.0),
+        topLeft: Radius.circular(30.0),
+        topRight: Radius.circular(30.0),
       ),
       clipBehavior: Clip.antiAlias,
       child: Container(
@@ -24,37 +23,34 @@ class _ChatsTabCategoryItemListState extends State<ChatsTabCategoryItemList> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
           children: [
-            Expanded(
-              flex: 3,
-              child: Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(
-                        left: 20.0,
-                      ),
-                      child: Text(
-                        'Favourites',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.15,
+              margin: EdgeInsets.only(
+                  top: 10.0, left: 10.0, right: 10.0, bottom: 0.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 20.0,
+                    ),
+                    child: Text(
+                      'Favourites',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
                       ),
                     ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    ChatsTabFavourites(),
-                  ],
-                ),
+                  ),
+                  ChatsTabFavouritesItems(),
+                ],
               ),
             ),
             Expanded(
-              flex: 8,
+              flex: 1,
               child: Container(
                 child: ListView.builder(
                   itemCount: MESSAGES_DUMMY_DATA.length,
